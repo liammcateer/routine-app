@@ -1,14 +1,20 @@
 language: node_js
 node_js:
   - "stable"
+env:
+  - PROJECT_DIRECTORY=react-frontent
+  # - PROJECT_DIRECTORY=aws-backend
+cache:
+  directories:
+  - $PROJECT_DIRECTORY/node_modules
 script:
-  - cd react-frontend
-  - npm install
-  - npm run build
+  - cd $PROJECT_DIRECTORY && npm install && npm run test
+before_deploy:
+  - cd react-frontend && npm run build
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $github_token
-  local_dir: build
+  local_dir: react-frontend/build
   on:
     branch: master
