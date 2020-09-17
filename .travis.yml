@@ -8,7 +8,7 @@ cache:
   directories:
   - $PROJECT_DIRECTORY/node_modules
 script:
-  - cd $PROJECT_DIRECTORY && npm install && npm run test
+  - cd $PROJECT_DIRECTORY && npm install && npm run test --passWithNoTests
 before_deploy:
   - cd react-frontend && npm run build
 deploy:
