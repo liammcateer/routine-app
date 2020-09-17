@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "stable"
 env:
-  - PROJECT_DIRECTORY=react-frontent
+  - PROJECT_DIRECTORY=react-frontend
   # - PROJECT_DIRECTORY=aws-backend
 cache:
   directories:
